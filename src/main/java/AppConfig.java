@@ -2,6 +2,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
+
+//@Configuration используется для обозначения блока инициализации
 @Configuration
 public class AppConfig {
  
@@ -12,15 +14,17 @@ public class AppConfig {
         return helloWorld;
     }
 
+
+    //В классе AppConfig, по аналогии, создайте бин с именем “cat”.
     @Bean(name="cat")
     @Scope("prototype")
-    public Cat getSayCat() {
-        Cat sayCat = new Cat();
-        sayCat.setMessage("ЪУЪ");
-        return sayCat;
+    public Cat getCat() {
+        Cat сat = new Cat();
+        сat.setMessage("ЪУЪ");
+        return сat;
     }
 
 
 
-    //В классе AppConfig, по аналогии, создайте бин с именем “cat”.
+
 }
